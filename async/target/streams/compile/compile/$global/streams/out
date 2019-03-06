@@ -1,0 +1,4 @@
+[0m[[0m[31merror[0m] [0m[0m/Users/cpadhye/cera/async/src/main/scala/async/Async.scala:25:36: object java.lang.Throwable is not a value[0m
+[0m[[0m[31merror[0m] [0m[0m    eventuallyX.recoverWith({ case Throwable  => Future.successful(-1)})[0m
+[0m[[0m[31merror[0m] [0m[0m                                   ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

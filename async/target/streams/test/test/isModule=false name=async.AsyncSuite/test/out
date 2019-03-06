@@ -1,0 +1,10 @@
+[0m[[0m[0minfo[0m] [0m[0m[32mAsyncSuite:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- transformSuccess should transform successful computations[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- transformSuccess should propagate the failure of a failed computation[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- recoverFailure should recover from failed computations[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- recoverFailure should propagate successful computations[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- sequenceComputations should start the second computation after the first has completed[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- sequenceComputations should not start the second computation if the first has failed[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- concurrentComputations should start both computations independently of each other’s completion[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- insist should not retry successful computations[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- insist should retry failed computations[0m[0m

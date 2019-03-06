@@ -1,0 +1,23 @@
+[0m[[0m[0minfo[0m] [0m[0mPackaging /Users/cpadhye/cera/async/target/scala-2.11/reactive-async_2.11-0.1.0-SNAPSHOT.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	async/Async$$anonfun$recoverFailure$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/cpadhye/cera/async/target/scala-2.11/classes/async/Async$$anonfun$recoverFailure$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	async/Async$$anonfun$transformSuccess$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/cpadhye/cera/async/target/scala-2.11/classes/async/Async$$anonfun$transformSuccess$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	async[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/cpadhye/cera/async/target/scala-2.11/classes/async[0m
+[0m[[0m[0mdebug[0m] [0m[0m	async/Async$$anonfun$insist$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/cpadhye/cera/async/target/scala-2.11/classes/async/Async$$anonfun$insist$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	async/Async$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/cpadhye/cera/async/target/scala-2.11/classes/async/Async$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	async/Async$$anonfun$sequenceComputations$1$$anonfun$apply$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/cpadhye/cera/async/target/scala-2.11/classes/async/Async$$anonfun$sequenceComputations$1$$anonfun$apply$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	async/Async$$anonfun$sequenceComputations$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/cpadhye/cera/async/target/scala-2.11/classes/async/Async$$anonfun$sequenceComputations$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	async/Async$$anonfun$concurrentComputations$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/cpadhye/cera/async/target/scala-2.11/classes/async/Async$$anonfun$concurrentComputations$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	async/Async$$anonfun$concurrentComputations$1$$anonfun$apply$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/cpadhye/cera/async/target/scala-2.11/classes/async/Async$$anonfun$concurrentComputations$1$$anonfun$apply$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	async/Async.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/cpadhye/cera/async/target/scala-2.11/classes/async/Async.class[0m
+[0m[[0m[0minfo[0m] [0m[0mDone packaging.[0m
