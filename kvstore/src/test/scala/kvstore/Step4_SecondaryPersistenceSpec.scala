@@ -65,7 +65,7 @@ trait Step4_SecondaryPersistenceSpec
     }
 
     // Persistence should be retried
-    println(s"Persist id = $persistId")
+    //println(s"Persist id = $persistId")
     persistence.expectMsg(300.milliseconds, Persist("k1", Some("v1"), persistId))
     persistence.expectMsg(300.milliseconds, Persist("k1", Some("v1"), persistId))
 

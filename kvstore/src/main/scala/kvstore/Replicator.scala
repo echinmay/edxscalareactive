@@ -13,12 +13,12 @@ object Replicator {
   case class Snapshot(key: String, valueOption: Option[String], seq: Long)
   case class SnapshotAck(key: String, seq: Long)
 
-  case class SnapShotTimer(seq: Long, num: Int)
+  case class SnapShotTimerExp(seq: Long, num: Int)
 
   def props(replica: ActorRef): Props = Props(new Replicator(replica))
 }
 
-class Replicator(val replica: ActorRef) extends Actor {
+class Replicator(val replica: ActorRef) extends Actor with akka.actor.ActorLogging {
   import Replicator._
   import Replica._
   import context.dispatcher
@@ -27,7 +27,7 @@ class Replicator(val replica: ActorRef) extends Actor {
    * The contents of this actor is just a suggestion, you can implement it in any way you like.
    */
 
-  val maxRetries = 3
+  val maxRetries = 4
 
   val delay = 200 milliseconds
 
@@ -56,7 +56,7 @@ class Replicator(val replica: ActorRef) extends Actor {
     val t =
       context.system.scheduler.scheduleOnce(delay,
         context.self,
-        SnapShotTimer(s.seq, tryNum))
+        SnapShotTimerExp(s.seq, tryNum))
     tMap = tMap updated (s.seq, t)
   }
 
@@ -76,6 +76,7 @@ class Replicator(val replica: ActorRef) extends Actor {
   /* TODO Behavior for the Replicator. */
   def receive: Receive = {
     case Replicate(k, vo, id) => {
+      //println("Got replicate message")
       val s = Snapshot(k, vo, nextSeq())
       // Add the snap shot to the replication request
       acks = acks updated (s.seq, (context.sender(), Replicate(k, vo, id)))
@@ -88,9 +89,13 @@ class Replicator(val replica: ActorRef) extends Actor {
     }
 
     case SnapshotAck(key, seq) => {
+      val sendr = context.sender()
+      //println(s"Got snapshotack from $sendr")
       if (acks contains seq) {
         val x = acks.get(seq)
+        //println("Going to send replicated message")
         x.map( ar => {
+          //println(s"Send replicated message to $ar")
           ar._1 ! Replicated(ar._2.key, ar._2.id)
         })
       }
@@ -103,12 +108,10 @@ class Replicator(val replica: ActorRef) extends Actor {
       }
     }
 
-    case SnapShotTimer(seq, numtimes) => {
+    case SnapShotTimerExp(seq, numtimes) => {
       if ((numtimes == maxRetries) || (!snapMap.contains(seq))) {
-        // Tried three times. We now give up.
         cleanUp(seq)
       } else {
-        // Retry one more time
         val s = snapMap.get(seq).get
         sendSnapshot(s, numtimes + 1)
       }

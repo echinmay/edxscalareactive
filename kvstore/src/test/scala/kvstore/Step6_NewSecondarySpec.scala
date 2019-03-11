@@ -47,6 +47,7 @@ trait Step6_NewSecondarySpec
     val ack1 = user.set("k1", "v1")
     secondary.expectMsg(Snapshot("k1", Some("v1"), 0L))
     val replicator = secondary.lastSender
+    println(s"From test. Expecting actor to be terminated $replicator")
     secondary.reply(SnapshotAck("k1", 0L))
     user.waitAck(ack1)
 
